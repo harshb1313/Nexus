@@ -28,7 +28,7 @@ text-white">
             <>
               {/* Create Link */}
               <Link 
-                href="/startup/create"
+                href="/create"
                 className="flex items-center px-4 py-2 text-sm font-medium text-text-secondary hover:text-brand-600 hover:bg-brand-50 rounded-lg transition-colors duration-200"
               >
                 <span>Create</span>
