@@ -1,10 +1,10 @@
 import { ArrowRight } from 'lucide-react';
 import SearchForm from '@/app/components/SearchForm'
-import StartupCard from '../components/StartupCard';
+import FetchPosts from '../components/fetchPosts';
 
 export default async function StartupHero({ searchParams }: { searchParams: Promise<{ query?: 'string' }> }) {
   const query = (await searchParams).query
-  const posts = [{ _createdAt:'yesterday', _views:'55',_id:1,_author:{id:1},_image:'',description:"This is description",category:"Robots",title:"weRobots"}]
+  const posts = [{ _createdAt: 'yesterday', _views: '55', _id: 1, _author: { id: 1 }, _image: '', description: "This is description", category: "Robots", title: "weRobots" }]
   return (
     <>
       <section className="relative min-h-screen bg-emerald-500 overflow-hidden">
@@ -53,40 +53,11 @@ export default async function StartupHero({ searchParams }: { searchParams: Prom
           </div>
         </div>
       </section>
-<section className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-  <div className="mb-8">
-    <h1 className="text-3xl font-bold text-zinc-900 dark:text-white mb-2">
-      {query ? `Results For "${query}"` : "All Startups"}
-    </h1>
-    <div className="w-24 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full"></div>
-  </div>
-  
-  {posts && posts.length > 0 ? (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {posts.map((post: StartupPost, id: number) => (
-        <StartupCard
-          key={post?._id}
-          name={post?.title}
-          description={post?.description}
-          views={post?._views}
-          createdAt={post?._createdAt}
-          category={post?.category}
-          
-        />
-      ))}
-    </div>
-  ) : (
-    <div className="text-center py-12">
-      <div className="text-zinc-400 dark:text-zinc-500 text-6xl mb-4">🔍</div>
-      <p className="text-xl text-zinc-600 dark:text-zinc-400 font-medium">
-        No startups found.
-      </p>
-      <p className="text-zinc-500 dark:text-zinc-500 mt-2">
-        Try adjusting your search criteria or check back later.
-      </p>
-    </div>
-  )}
-</section>
+
+      {/* POSTS */}
+      <section className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+        <FetchPosts />
+      </section>
     </>
   );
 }

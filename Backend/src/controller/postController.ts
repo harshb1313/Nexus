@@ -28,4 +28,19 @@ export const createPost = async (req: Request, res: Response) => {
         res.status(500).json({ error: 'Failed to create story' });
     }
 
+} 
+
+export const getPosts=async(req:Request,res:Response)=>{
+try {
+   const posts = await Post.find().sort({createdAt:-1})//newest first
+   res.status(200).json(posts);
+} catch (error) {
+    console.log("error :", error)
+}
+}
+
+export const getPostById = async(req:Request,res:Response)=>{
+    const {id} = req.params
+    const post = await Post.findById(id)
+    res.status(200).json(post)
 }
