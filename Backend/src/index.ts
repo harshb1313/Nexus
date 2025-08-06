@@ -5,6 +5,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 
 import postRoutes from '../src/routes/postRoute';
+import userRoutes from '../src/routes/userProfile'
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ app.use(express.json());
 
 // Routes
 app.use(postRoutes);
+app.use(userRoutes)
 
 // MongoDB Connect
 mongoose.connect(process.env.MONGO_URI!)
