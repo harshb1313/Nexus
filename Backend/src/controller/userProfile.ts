@@ -6,3 +6,4 @@ export const userProfile = async (req: Request, res: Response) => {
     const posts = await Post.find({ authorId: id }).sort({ createdAt: -1 })
     res.status(200).json(posts)
 }
+

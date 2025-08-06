@@ -1,6 +1,7 @@
 import { ArrowRight } from 'lucide-react';
 import SearchForm from '@/app/components/SearchForm'
 import FetchPosts from '../components/fetchPosts';
+import Link from 'next/link'
 
 export default async function StartupHero({ searchParams }: { searchParams: Promise<{ query?: 'string' }> }) {
   const query = (await searchParams).query
@@ -45,19 +46,16 @@ export default async function StartupHero({ searchParams }: { searchParams: Prom
                 <span className="group-hover:translate-x-1 transition-transform duration-200">Start Writing</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
               </button>
-
-              <button className="group inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 border border-white/30 hover:border-white/50 hover:shadow-lg transform hover:scale-105 hover:-translate-y-1 active:scale-95 active:translate-y-0">
+              <Link href={'/explore-page'}> <button className="group inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 border border-white/30 hover:border-white/50 hover:shadow-lg transform hover:scale-105 hover:-translate-y-1 active:scale-95 active:translate-y-0">
                 <span className="group-hover:translate-x-1 transition-transform duration-200">Explore Stories</span>
-              </button>
+              </button></Link>
+
             </div>
           </div>
         </div>
       </section>
 
-      {/* POSTS */}
-      <section className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-        <FetchPosts />
-      </section>
+  
     </>
   );
 }
