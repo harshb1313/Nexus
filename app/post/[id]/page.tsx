@@ -27,7 +27,7 @@ const fetchPost = async (id: string) => {
 }
 
 const Page = async ({ params }: PostId) => {
-    const post = await fetchPost((await params).id)
+    const post = await fetchPost(params.id)
 
     if (!post) {
         return (
