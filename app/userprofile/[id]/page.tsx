@@ -1,6 +1,6 @@
 import React from "react";
 import StartupCard, { StartupCardProps } from "../../components/StartupCard";
-// import Image from "next/image";
+import Image from "next/image";
 
 interface Post {
   _id: string;
