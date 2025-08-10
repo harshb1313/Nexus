@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { Send, User, Tag, FileText, Sparkles, ArrowLeft } from 'lucide-react';
+import Image from 'next/image';
 import Form from 'next/form'
 
 const PostForm = () => {
@@ -27,7 +28,7 @@ const PostForm = () => {
       authorImage: session?.user?.image,
       authorName: session?.user?.name
     }
-    
+
     try {
       const res = await fetch('http://localhost:5000/api/post', {
         method: "POST",
@@ -58,7 +59,7 @@ const PostForm = () => {
       <div className="absolute inset-0">
         <div className="absolute top-20 right-20 w-64 h-64 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 left-20 w-48 h-48 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div 
+        <div
           className="absolute inset-0 opacity-5"
           style={{
             backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)`,
@@ -71,20 +72,22 @@ const PostForm = () => {
       <div className="relative">
         <nav className="px-4 sm:px-6 lg:px-8 py-6">
           <div className="max-w-4xl mx-auto flex items-center justify-between">
-            <button 
+            <button
               onClick={() => router.back()}
               className="inline-flex items-center text-white/80 hover:text-white transition-colors group"
             >
               <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform duration-200" />
               <span className="text-sm font-medium">Back</span>
             </button>
-            
+
             <div className="flex items-center space-x-3">
               <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center">
                 {session?.user?.image ? (
-                  <img 
-                    src={session.user.image} 
+                  <Image
+                    src={session.user.image}
                     alt={session.user.name || 'User'}
+                    width={32}
+                    height={32}
                     className="w-full h-full rounded-full object-cover"
                   />
                 ) : (
@@ -105,7 +108,7 @@ const PostForm = () => {
               <Sparkles className="w-4 h-4" />
               <span>Share Your Journey</span>
             </div>
-            
+
             <h1 className="text-4xl sm:text-5xl font-bold text-transparent bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text mb-4">
               Create Your Story
             </h1>
@@ -121,7 +124,7 @@ const PostForm = () => {
         <div className="max-w-4xl mx-auto">
           <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl p-8 sm:p-12 shadow-2xl">
             <Form action='/create' onSubmit={handleSubmit} className="space-y-8">
-              
+
               {/* Story Title */}
               <div className="space-y-3">
                 <label className="flex items-center text-white text-lg font-semibold">
@@ -179,7 +182,7 @@ const PostForm = () => {
                 {tags && (
                   <div className="flex flex-wrap gap-2 mt-3">
                     {tags.split(',').map((tag, index) => (
-                      <span 
+                      <span
                         key={index}
                         className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 border border-purple-200/50"
                       >
@@ -219,13 +222,13 @@ const PostForm = () => {
 
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-8">
-                <button
+                {/* <button
                   type="button"
                   className="sm:flex-1 px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-2xl transition-all duration-300 hover:bg-white/20 hover:scale-105 transform"
                 >
                   Save Draft
-                </button>
-                
+                </button> */}
+
                 <button
                   type="submit"
                   disabled={!title || !content || !founder}

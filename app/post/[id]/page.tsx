@@ -72,7 +72,7 @@ const Page = async ({ params }: PostId) => {
                             Back to Stories
                         </Link>
                         
-                        <div className="flex items-center space-x-4">
+                        {/* <div className="flex items-center space-x-4">
                             <button className="p-2 text-gray-400 hover:text-gray-600 transition-colors">
                                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
@@ -83,7 +83,7 @@ const Page = async ({ params }: PostId) => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                                 </svg>
                             </button>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </nav>
@@ -195,9 +195,9 @@ const Page = async ({ params }: PostId) => {
                             <div className="flex-1">
                                 <h3 className="text-lg font-semibold text-gray-900 mb-1">About the Founder</h3>
                                 <p className="text-purple-700 font-medium mb-2">{post.founder}</p>
-                                <p className="text-gray-600 text-sm">
+                                {/* <p className="text-gray-600 text-sm">
                                     Passionate entrepreneur sharing insights about the startup journey and building innovative solutions.
-                                </p>
+                                </p> */}
                             </div>
                         </div>
                     </div>
@@ -207,7 +207,7 @@ const Page = async ({ params }: PostId) => {
                 <div className="mt-12 pt-8 border-t border-gray-200">
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
                         {/* Engagement Buttons */}
-                        <div className="flex items-center space-x-4">
+                        {/* <div className="flex items-center space-x-4">
                             <button className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-200 transform hover:scale-105 shadow-lg">
                                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -220,7 +220,7 @@ const Page = async ({ params }: PostId) => {
                                 </svg>
                                 Share
                             </button>
-                        </div>
+                        </div> */}
 
                         {/* Admin Actions */}
                         <div className="flex items-center">

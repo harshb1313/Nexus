@@ -1,5 +1,6 @@
 import React from "react";
 import StartupCard, { StartupCardProps } from "../../components/StartupCard";
+// import Image from "next/image";
 
 interface Post {
   _id: string;
@@ -75,7 +76,7 @@ export default async function UserPage({ params }: UserPageProps) {
                     <h1 className="text-4xl sm:text-5xl font-bold mb-2 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
                       {userInfo.name}
                     </h1>
-                    <p className="text-lg sm:text-xl text-purple-200 mb-4">Startup Enthusiast & Creator</p>
+                    {/* <p className="text-lg sm:text-xl text-purple-200 mb-4">Startup Enthusiast & Creator</p> */}
                     
                     {/* Stats */}
                     <div className="flex flex-wrap justify-center sm:justify-start gap-6 sm:gap-8">
@@ -83,7 +84,7 @@ export default async function UserPage({ params }: UserPageProps) {
                         <div className="text-2xl sm:text-3xl font-bold text-white">{userInfo.totalPosts}</div>
                         <div className="text-sm text-purple-200">Stories</div>
                       </div>
-                      <div className="text-center sm:text-left">
+                      {/* <div className="text-center sm:text-left">
                         <div className="text-2xl sm:text-3xl font-bold text-white">{userInfo.totalViews.toLocaleString()}</div>
                         <div className="text-sm text-purple-200">Views</div>
                       </div>
@@ -92,7 +93,7 @@ export default async function UserPage({ params }: UserPageProps) {
                           {posts.length > 0 ? Math.floor(userInfo.totalViews / userInfo.totalPosts) : 0}
                         </div>
                         <div className="text-sm text-purple-200">Avg Views</div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
