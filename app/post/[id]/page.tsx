@@ -25,9 +25,9 @@ const fetchPost = async (id: string) => {
         return null
     }
 }
-
-const Page = async ({ params }: PostId) => {
-    const post = await fetchPost(params.id)
+const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
+  const awaitedParams = await params;
+  const post = await fetchPost(awaitedParams.id);
 
     if (!post) {
         return (
