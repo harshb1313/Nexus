@@ -40,7 +40,7 @@ const Page = async ({ params }: PostId) => {
                     </div>
                     <h1 className="text-2xl font-bold text-gray-900 mb-3">Post Not Found</h1>
                     <p className="text-red-600 mb-6 leading-relaxed">
-                        The story you're looking for doesn't exist or couldn't be loaded. It may have been removed or the link is incorrect.
+                        The story you&apos;re looking for doesn&apos;t exist or couldn&apos;t be loaded. It may have been removed or the link is incorrect.
                     </p>
                     <Link 
                         href="/" 

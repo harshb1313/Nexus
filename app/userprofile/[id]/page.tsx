@@ -157,7 +157,7 @@ export default async function UserPage({ params }: UserPageProps) {
                 </div>
                 <h3 className="text-xl sm:text-2xl font-semibold text-gray-700 mb-3">No Stories Yet</h3>
                 <p className="text-gray-500 max-w-md mx-auto leading-relaxed">
-                  This creator hasn't shared any stories yet. Check back soon to discover their startup journey and insights.
+                  This creator hasn&apos;t shared any stories yet. Check back soon to discover their startup journey and insights.
                 </p>
               </div>
             ) : (
@@ -201,7 +201,7 @@ export default async function UserPage({ params }: UserPageProps) {
           </div>
           <h1 className="text-2xl font-bold text-gray-900 mb-3">Something went wrong</h1>
           <p className="text-red-600 mb-6 leading-relaxed">
-            We couldn't load the user's posts right now. Please try refreshing the page or check back later.
+            We couldn&apos;t load the user&apos;s posts right now. Please try refreshing the page or check back later.
           </p>
           <button 
             onClick={() => window.location.reload()} 
