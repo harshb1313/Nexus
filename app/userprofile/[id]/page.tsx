@@ -25,8 +25,7 @@ export default async function UserPage({ params }: UserPageProps) {
   console.log("params id →", id);
 
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
-    const res = await fetch(`${baseUrl}/api/user-profile/${id}`, {
+    const res = await fetch(`https://nexus-wuaz.onrender.com/api/user-profile/${id}`, {
       cache: 'no-store',
     });
 

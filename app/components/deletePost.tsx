@@ -22,7 +22,7 @@ const RemovePost = ({ postId, postAuthorId }: { postId: string, postAuthorId: st
     setIsDeleting(true)
     
     try {
-      const res = await fetch(`http://localhost:5000/api/delete/${postId}`, {
+      const res = await fetch(`https://nexus-wuaz.onrender.com/api/delete/${postId}`, {
         method: 'DELETE'
       })
       

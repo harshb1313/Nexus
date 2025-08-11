@@ -30,7 +30,7 @@ const PostForm = () => {
     }
 
     try {
-      const res = await fetch('http://localhost:5000/api/post', {
+      const res = await fetch('https://nexus-wuaz.onrender.com/api/post', {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

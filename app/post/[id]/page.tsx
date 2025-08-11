@@ -11,7 +11,7 @@ interface PostId {
 
 const fetchPost = async (id: string) => {
     try {
-        const res = await fetch(`http://localhost:5000/api/posts/${id}`, {
+        const res = await fetch(`https://nexus-wuaz.onrender.com/api/posts/${id}`, {
             cache: 'no-store'
         })
 

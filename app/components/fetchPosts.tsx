@@ -3,7 +3,7 @@ import { StartupCardProps } from './StartupCard'
 import StartupCard from './StartupCard'
 
 export const getData = async () => {
-    const res = await fetch("http://localhost:5000/api/posts", {
+    const res = await fetch("https://nexus-wuaz.onrender.com/api/posts", {
         cache: 'no-store',
     })
     return res.json()
