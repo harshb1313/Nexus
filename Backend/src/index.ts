@@ -4,8 +4,8 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
 
-import postRoutes from '../src/routes/postRoute';
-import userRoutes from '../src/routes/userProfile'
+import postRoutes from './routes/postRoute';
+import userRoutes from './routes/userProfile'
 
 dotenv.config();
 
